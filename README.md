@@ -1,10 +1,10 @@
 # PyQgis-og-numpy-tricks
-
-Billedfilfracanvas
+*****
+#Billedfilfracanvas
 
 Laver en billedfil fra canvas i qgis
 *****
-temakort.py
+#temakort.py
 Metode til at geokode en klassisk csv og geokode den vha af dataforsyningens adressekartotek. 
 Introduktion til qgis api'en såvel som http req syntaks
 
