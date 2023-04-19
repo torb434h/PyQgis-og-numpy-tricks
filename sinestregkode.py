@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+
+
 import numpy as np
 import struct
 import wave
@@ -21,7 +23,7 @@ title = 'lydfil.wav¨'
 y = [0]
 
 def toBinary(a):
-    """Den her funktion laver en tekstreng om til et boolean array, altså true false, ud fra ASCII tabellen"""
+    """Den her funktion laver en tekstreng om til et boolean array, altså true false, ud fra ASCII tabellen. Ikke præcis det samme som i en seriel port men derhenne af"""
     l, m = [], []
     for i in a:
         l.append(ord(i))
@@ -35,13 +37,13 @@ def toBinary(a):
 
 
 def createWaveArray(besked):
-    """laver et numpy array vi kan arbejde med"""
+    """laver et numpy array vi kan bruge som et indeks til at skrive en wave fil """
     
 
     x = np.arange(sample * 60 / int(BPM) * len(besked)) # np.arange laver et numpy array der har længden af sample, dvs samples pr sekund gange 60 divideret med BPM gange antalet af binære værdier. Altså 7 beats pr bogstav
     y = x
     for i in range(len(besked)): # man kan ikke loope gennem et bolean arr, så den bliver wrappet i len()
-        a = i*sample * 60 // BPM # værdi til at slice array med. for loopet kører arrayet igennem. Værd at bemærke den dobbelte //. Når man bruger[:] til at slice skal den være intigers, altså hele tal, i modsætning til floats, decimal tal
+        a = i*sample * 60 // BPM # værdi til at slice array med. for loopet kører arrayet igennem. Værd at bemærke den dobbelte //. Når man bruger[:] til at slice skal den være intigers, altså hele tal, i modsætning til floats, decimal tal. Metoden kalder floor division
         b = a + sample * 60 // BPM
         if besked[i] == True:
             y[a:b] = volume * np.sin(2 * np.pi * trueFreq * x[a:b] // Fs)
