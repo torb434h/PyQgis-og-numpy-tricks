@@ -14,11 +14,8 @@ link = 'https://api.dataforsyningen.dk/rest/gsearch/v1.0/adresse?q={}&token={}'
 
 token = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' # token man får hos dataforsyningen hvis man laver en bruger, står i linket til fx deres wfs links
 
-token = 'a34f178f6a8135036f17623c1c34b496'
-filSti = 'furesoe_kommune_dag30-03-23.csv'
-# [i if i.find('.csv') > -1 else None for i in os.listdir()][0] # fin oneliner der tjekker om der er en csv fil i mappen sciptet bliver kørt og sætter det til filSti
-
-
+filSti = 'furesoe_kommune_dag30-03-23.csv' #eksempel
+# [i if i.find('.csv') > -1 else None for i in os.listdir()][0] # fin oneliner der tjekker om der er en csv fil i mappen sciptet bliver kørt
 def enkod(sti):
     return sti.replace(' ', '%20').replace('æ','%c3%a6').replace('ø','%c3%b8').replace('å','%c3%a5') # skrald metode, kigger på det senere. Evt noget med urllib parse
 
