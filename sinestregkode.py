@@ -17,7 +17,7 @@ nullBitFreq = 440
 trueFreq = 220
 falseFreq = 110
 besked = 'her er en tekststreng'
-title = 'lydfil.wav¨'
+title = 'boolean komposition af "{}".wav'.format(besked)
 
 
 y = [0]
