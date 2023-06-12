@@ -14,3 +14,7 @@ tabel i qgis
 En metode til at bevæge sig mellem forskellige domæner. 
 Funktioner til at illustrere hvad ASCII er hvordan man kan arbejde med sinusfunktioner i numpy og compile binaries.
 
+
+*******
+<h2>vindskyddskartan.py</h2>
+Scrapper en svensk hjemmeside for shelter og plotter dem in qgis vha Beautiful soup der skal installeres vha pip
