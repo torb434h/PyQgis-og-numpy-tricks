@@ -8,12 +8,11 @@ html = urlopen(req)
 soup = BeautifulSoup(html)
 
 
-tr = [tr for tr in soup.findAll('tr',{"name":True}) ]
 
 
 
-layer = QgsVectorLayer('Point?crs=EPSG:4619', 'vindskyd', 'memory') #object fra qgis egen class, QgsVectorLayer, angivet med datum data fra dataforsyningen anvender
-provider = layer.dataProvider()
+
+layer = QgsVectorLayer('Point?crs=EPSG:4619', 'vindskyd', 'memory')
 provider.addAttributes([QgsField('Navn', QVariant.String),QgsField('Type', QVariant.String)])
 layer.updateFields()
 
